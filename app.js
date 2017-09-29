@@ -8,14 +8,13 @@ const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
 
+// init and connect the database
 mongoose.connect(config.database);
 let db = mongoose.connection;
-
 // Check connection
 db.once('open', function(){
-  console.log('Connected to MongoDB');
+  console.log('Successully connected to MongoDB');
 });
-
 // Check for DB errors
 db.on('error', function(err){
   console.log(err);
@@ -23,10 +22,7 @@ db.on('error', function(err){
 
 // Init App
 const app = express();
-
-// Bring in Models
-let Article = require('./models/article');
-
+// Set up view related component
 // Load View Engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -97,6 +93,8 @@ app.get('/', function(req, res){
   });
 });
 
+// Bring in Models
+let Article = require('./models/article');
 // Route Files
 let articles = require('./routes/articles');
 let users = require('./routes/users');
