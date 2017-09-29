@@ -1,6 +1,6 @@
-# Article Knowledgebase Application
+# Software Tutorial Application
 
-This is a knowledgebase app used in the "Node.js & Express From Scratch" Youtube series.
+This is a software tutorial app to share coding knowledge between programmers.
 
 ## Technologies
 * Node.js
