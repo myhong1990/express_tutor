@@ -8,6 +8,7 @@ This is a software tutorial app to share coding knowledge between programmers.
 * Express Messages, Session, Connect Flash & Validation
 * MongoDB & Mongoose
 * Pug Templating
+* Less Templating
 * Passport.js Authentication
 * BCrypt Hashing
 
