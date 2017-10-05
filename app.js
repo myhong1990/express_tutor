@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
+const lessMiddleware = require('less-middleware');
 
 // init and connect the database
 mongoose.connect(config.database);
@@ -26,6 +27,10 @@ const app = express();
 // Load View Engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// configure LESS
+app.use(lessMiddleware(path.join(__dirname, 'public/less')));
+
 
 // Body Parser Middleware
 // parse application/x-www-form-urlencoded

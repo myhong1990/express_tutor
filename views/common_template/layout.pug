@@ -1,13 +1,13 @@
 doctype html
-html
+html()
   head
-    title #{f}
-    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet' href='/css/style.css')
-    link(rel='stylesheet' href='/css/carousel.css')
+    title my first page
+    block scripts
+      link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+      
   body
     block header
-      include header.pug
+      
     block navbar
       include nav.pug
     .container
@@ -18,8 +18,9 @@ html
       block content
       br
       hr
-    block footer
-      include footer.pug    
+    .container
+      block foot
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')    
     script(src='/bower_components/jquery/dist/jquery.js')  
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/js/main.js')  

@@ -10,15 +10,26 @@ block navbar
         a.navbar-brand(href='/') codingFun
       #navbar.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li
+          li.nav-item.dropdown
             a(href='/') Home
+          li.nav-item.dropdown 
+            a#dropdown01.nav-link.dropdown-toggle(href='/software', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Software
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='/software/java') Java
+          li.nav-item.dropdown
+            a#dropdown01.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Hardware
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='#')
           if user
             li
               a(href='/articles/add') Add Article
-        form.form-inline.mt-2.mt-md-0
-          input.form-control.mr-sm-2(type='text', placeholder='Search')
-          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+          li
+            a(href='/AboutUs') AboutUs
         ul.nav.navbar-nav.navbar-right
+          ul.nav.navbar-nav.navbar-right
+            form.form-inline.my-2.my-lg-0
+              input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+              button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search 
           if user
             li 
               a(href='/users/logout') Logout
@@ -26,4 +37,4 @@ block navbar
             li
               a(href='/users/register') Register
             li
-              a(href='/users/login') Login        
+              a(href='/users/login') Login
