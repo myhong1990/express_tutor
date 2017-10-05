@@ -29,7 +29,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // configure LESS
-app.use(lessMiddleware(path.join(__dirname, 'public/less')));
+app.use(lessMiddleware('/less', {
+  dest: '/css',
+  pathRoot: path.join(__dirname, 'public')
+}));
 
 
 // Body Parser Middleware
